@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="w-full h-[80px] flex justify-between items-center px-4 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-600">
-      <h1>
-        <Link to="/" className="text-3xl">Exercise Tracker App</Link>
+    <nav className="container mx-auto px-8 max-w-[1000px] min-h-[80px] flex flex-wrap justify-between items-center bg-gradient-to-r from-blue-900 via-gray-900 to-slate-900 rounded-b-lg drop-shadow-lg">
+      <h1 className="text-4xl text-[#fffff9] pr-8">
+        <Link to="/">Exercise Tracker</Link>
       </h1>
       <div>
-        <ul className="flex justify-between items-center">
+        <ul className="py-4 flex sm:flex-row flex-col justify-start items-start">
           <li>
             <Link to="/">
               Exercises

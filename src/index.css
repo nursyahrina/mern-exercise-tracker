@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap");
-
 @layer base {
   body {
-    @apply font-[Roboto];
-    @apply text-[#fffff9];
+    @apply font-[Cambria];
   }
 
   h1,
   h2,
   h3 {
-    @apply font-[Lora];
+    @apply font-[Roboto];
     @apply font-bold;
   }
 
   li {
     @apply font-bold;
-    @apply px-4;
+    @apply text-lg;
+    @apply pr-8;
     @apply cursor-pointer;
     @apply text-[#fffff9];
-    @apply hover:text-amber-100;
+    @apply hover:text-blue-200;
   }
 }

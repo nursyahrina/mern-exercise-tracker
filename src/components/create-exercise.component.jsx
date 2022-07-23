@@ -1,5 +1,3 @@
-/* eslint-disable react/no-string-refs */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -57,9 +55,13 @@ class CreateExercise extends Component {
   onSubmit = (event) => {
     event.preventDefault();
 
-    const { exercise } = this.state;
+    const exercise = {
+      username: this.state.username,
+      description: this.state.description,
+      duration: this.state.duration,
+      date: this.state.date,
+    };
 
-    // eslint-disable-next-line no-console
     console.log(exercise);
 
     window.location = '/';
@@ -83,7 +85,6 @@ class CreateExercise extends Component {
             </label>
             <select
               id="username"
-              ref="userInput"
               className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"
               required
               value={username}

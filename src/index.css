@@ -4,19 +4,18 @@
 
 @layer base {
   body {
-    @apply font-[Cambria];
+    @apply font-[sans-serif];
   }
 
   h1,
   h2,
   h3 {
-    @apply font-[Roboto];
+    @apply font-[Cambria];
     @apply font-bold;
   }
 
   li {
     @apply font-bold;
-    @apply text-lg;
     @apply pr-8;
     @apply cursor-pointer;
     @apply text-[#fffff9];

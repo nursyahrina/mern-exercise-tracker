@@ -653,20 +653,18 @@ input[type="range"]::-ms-fill-lower {
 }
 
 body {
-  font-family: Cambria;
+  font-family: sans-serif;
 }
 
 h1, 
   h2, 
   h3 {
-  font-family: Roboto;
+  font-family: Cambria;
   font-weight: 700;
 }
 
 li {
   font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
   padding-right: 2rem;
   cursor: pointer;
   --tw-text-opacity: 1;
@@ -995,6 +993,11 @@ li:hover {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .px-8 {

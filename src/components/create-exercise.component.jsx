@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
+import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
 
 class CreateExercise extends Component {
@@ -22,10 +23,15 @@ class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      users: ['test user'],
-      username: 'test user',
-    });
+    axios.get('http://localhost:5000/users/')
+      .then((response) => {
+        if (response.data.length > 0) {
+          this.setState({
+            users: response.data.map((user) => user.username),
+            username: response.data[0].username,
+          });
+        }
+      });
   }
 
   onChangeUsername = (event) => {
@@ -63,6 +69,9 @@ class CreateExercise extends Component {
     };
 
     console.log(exercise);
+
+    axios.post('http://localhost:5000/exercises/add', exercise)
+      .then((response) => console.log(response.data));
 
     window.location = '/';
   };
@@ -152,7 +161,13 @@ class CreateExercise extends Component {
               />
             </div>
           </div>
-          <button type="submit" className="my-5 text-[#fffff9] bg-gradient-to-r from-blue-900 via-gray-900 to-slate-900 hover:bg-gradient-to-r hover:from-slate-900 hover:via-gray-900 hover:to-blue-900 focus:ring-4 hover:drop-shadow-md focus:outline-none focus:ring-blue-300 font-bold rounded-lg px-6 py-2.5">Create New Exercise</button>
+          <button
+            type="submit"
+            className="my-5 text-[#fffff9] bg-gradient-to-r from-blue-900 via-gray-900 to-slate-900 hover:bg-gradient-to-r hover:from-slate-900 hover:via-gray-900 hover:to-blue-900 focus:ring-4 hover:drop-shadow-md focus:outline-none focus:ring-blue-300 font-bold rounded-lg px-6 py-2.5"
+          >
+            Create New Exercise
+
+          </button>
         </form>
       </div>
     );

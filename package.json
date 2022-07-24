@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "devcss": "npx tailwindcss -i ./src/index.css -o ./public/css/output.css --watch",
-    "buildcss": "npx tailwindcss -o ./public/css/style.css --minify"
+    "buildcss": "npx tailwindcss -i ./public/css/output.css -o ./public/css/style.css --minify"
   },
   "eslintConfig": {
     "extends": [

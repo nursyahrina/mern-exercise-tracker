@@ -28,7 +28,7 @@ class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('http://localhost:5000/users/add', user)
+    axios.post('https://mern-exercise-tracker-node.herokuapp.com/users/add', user)
       .then((response) => console.log(response.data));
 
     this.setState({

@@ -23,7 +23,7 @@ class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://mern-exercise-tracker-node.herokuapp.com/users/')
       .then((response) => {
         if (response.data.length > 0) {
           this.setState({
@@ -70,7 +70,7 @@ class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:5000/exercises/add', exercise)
+    axios.post('https://mern-exercise-tracker-node.herokuapp.com/add', exercise)
       .then((response) => console.log(response.data));
 
     window.location = '/';

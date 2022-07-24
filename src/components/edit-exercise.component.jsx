@@ -24,7 +24,7 @@ class EditExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/exercises/${this.props.match.params.id}`)
+    axios.get(`https://mern-exercise-tracker-node.herokuapp.com/exercises/${this.props.match.params.id}`)
       .then((response) => {
         this.setState({
           username: response.data.username,
@@ -36,7 +36,7 @@ class EditExercise extends Component {
       .catch((error) => {
         console.log(error);
       });
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://mern-exercise-tracker-node.herokuapp.com/users/')
       .then((response) => {
         if (response.data.length > 0) {
           this.setState({
@@ -82,7 +82,7 @@ class EditExercise extends Component {
 
     console.log(exercise);
 
-    axios.post(`http://localhost:5000/exercises/update/${this.props.match.params.id}`, exercise)
+    axios.post(`https://mern-exercise-tracker-node.herokuapp.com/exercises/update/${this.props.match.params.id}`, exercise)
       .then((response) => console.log(response.data));
 
     window.location = '/';
